@@ -51,6 +51,7 @@ namespace JenkinsIntegration
                 {
                     NameClaimType = "name"
                 };
+                options.RequireHttpsMetadata = false;
             });
             services.AddMvc(options => options.EnableEndpointRouting = false);
             //services.AddMvc();

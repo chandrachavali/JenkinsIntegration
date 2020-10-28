@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-
-namespace JenkinsIntegration.Controllers
+namespace OktaJenkinsCI.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Login()
         {
             if (!HttpContext.User.Identity.IsAuthenticated)
                 return Challenge(OpenIdConnectDefaults.AuthenticationScheme);
